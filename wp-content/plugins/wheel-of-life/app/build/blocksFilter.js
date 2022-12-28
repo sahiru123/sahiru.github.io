@@ -1,1 +1,0 @@
-var wheeloflifeExports;!function(){var e=["wheeloflife/add-wheels","wheeloflife/wheel-row"];wp.domReady&&wp.blocks&&wp.domReady((function(){e.forEach((function(e){wp.blocks.unregisterBlockType(e)}))})),(wheeloflifeExports=void 0===wheeloflifeExports?{}:wheeloflifeExports).blocksFilter={}}();

@@ -1,17 +1,50 @@
 <?php
 /**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
+ * The main template file.
  *
- * @package WordPress
+ * 
+ * @package    Auxin
+ * @author     averta (c) 2014-2022
+ * @link       http://averta.net
  */
+get_header(); ?>
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define( 'WP_USE_THEMES', true );
+    <main id="main" <?php auxin_content_main_class(); ?> >
+        <div class="aux-wrapper">
+            <div class="aux-container aux-fold">
 
-/** Loads the WordPress Environment and Template */
-require __DIR__ . '/wp-blog-header.php';
+                <div id="primary" class="aux-primary" >
+                    <div class="content" role="main" data-target="index" >
+
+                        <?php
+                        // if is archive page
+                        if ( have_posts() ) {
+                            if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) {
+                                get_template_part( 'templates/theme-parts/loop', get_post_type() );
+                            }
+                        // if is 404 page
+                        } elseif( is_404() ){
+                            if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
+                                get_template_part( 'templates/theme-parts/entry/404' );
+                            }
+                        // if search result not found
+                        } else {
+                            if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
+                                get_template_part( 'templates/theme-parts/content', 'none' );
+                            }
+                        }
+                        ?>
+
+                    </div><!-- end content -->
+                </div><!-- end primary -->
+
+
+                <?php get_sidebar(); ?>
+
+
+            </div><!-- end container -->
+        </div><!-- end wrapper -->
+    </main><!-- end main -->
+
+<?php get_sidebar("footer"); ?>
+<?php get_footer(); ?>
