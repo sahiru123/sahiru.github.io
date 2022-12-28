@@ -1,0 +1,390 @@
+/*
+Theme Name: Meditation Coach
+Theme URI: https://blossomthemes.com/wordpress-themes/meditation-coach/
+Template: seva-lite 
+Author: Blossom Themes
+Author URI: https://blossomthemes.com/
+Description: Meditation Coach is a perfect WordPress theme for lead-generation for coaches, mentors, therapists, speakers, leaders, counselors, medical practitioners, yoga instructors, meditation coaches and entrepreneurs. This theme includes sections like Banner with Call-to-Action, Newsletter, About, Services, Testimonials, Call-to-Action and Instagram to introduce yourself and display your services. It is also WooCommerce compatible and works smoothly with LMS plugins such as LearnDash and TutorLMS. This speed-optimized theme is easy to use, mobile-friendly, and SEO-friendly. Meditation Coach is translation-ready, Schema-friendly, and RTL script-ready. Check theme details at https://blossomthemes.com/wordpress-themes/meditation-coach/, demo at https://blossomthemes.com/theme-demo/?theme=meditation-coach, documentation at https://docs.blossomthemes.com/meditation-coach/, and get support at https://blossomthemes.com/support-ticket/.
+Version: 1.0.3
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires PHP: 5.6
+Tested up to: 5.9
+Text Domain: meditation-coach
+Tags: blog, one-column, two-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, custom-header, custom-menu, custom-logo, featured-images, threaded-comments, full-width-template, rtl-language-support, translation-ready, theme-options, photography, e-commerce
+*/
+
+:root {
+  --global-body-font: "DM Sans", sans-serif;
+  --global-heading-font: "Zilla Slab", serif;
+  --primary-color: #5e7e6e;
+  --primary-color-rgb: 94, 126, 110;
+  --secondary-color: #ca9470;
+  --secondary-color-rgb: 202, 148, 112;
+}
+
+/*============================
+HEADER LAYOUT TWO
+============================*/
+.site-header.style-two .header-right .secondary-menu {
+  margin-left: 20px;
+  margin-right: 0;
+}
+.site-header.style-two > .header-top {
+  padding: 20px 0;
+}
+.site-header.style-two .header-main .main-navigation {
+  flex: 1;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1025px) {
+  .site-header.style-two
+    .header-main
+    .main-navigation
+    .nav-menu
+    > li:first-child
+    > a {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .site-header.style-two .header-main .header-right {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+.site-header.style-two .header-main .header-right .header-social {
+  margin-right: 60px;
+}
+@media screen and (max-width: 1199px) {
+  .site-header.style-two .header-main .header-right .header-social {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .site-header.style-two .header-main .header-right .header-social {
+    display: none;
+  }
+}
+.site-header.style-two .header-main .header-right .header-cart {
+  margin-right: 15px;
+}
+.site-header.style-two .header-main .header-right .search-cart-wrap {
+  display: flex;
+}
+@media screen and (min-width: 1025px) {
+  .site-header.style-two
+    .header-main
+    .secondary-menu
+    .menu-secondary-container {
+    left: auto;
+    right: 0;
+  }
+  .site-header.style-two
+    .header-main
+    .secondary-menu
+    .menu-secondary-container
+    .close {
+    left: 10px;
+    right: auto;
+  }
+  .site-header.style-two
+    .header-main
+    .secondary-menu
+    .menu-secondary-container
+    .nav-menu
+    a {
+    text-align: right;
+  }
+  .site-header.style-two
+    .header-main
+    .secondary-menu
+    .menu-secondary-container
+    .nav-menu
+    .submenu-toggle {
+    right: auto;
+    left: 0;
+  }
+}
+
+.site-header .header-search {
+  align-self: center;
+  line-height: 20px;
+}
+.site-header .header-search .search-toggle {
+  all: unset;
+  cursor: pointer;
+}
+.site-header .header-search .header-search-wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--black-color-rgb), 0.8);
+  z-index: 99999;
+}
+.site-header .header-search .header-search-wrap .header-search-inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .search-form {
+  display: flex;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  height: 70px;
+  padding: 0 15px;
+}
+.site-header .header-search .header-search-wrap .header-search-inner .close {
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  min-height: unset;
+  background: none;
+}
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .search-form
+  input[type="search"] {
+  height: 70px;
+}
+.site-header .header-cart {
+  line-height: 20px;
+  position: relative;
+}
+.site-header .header-cart .cart .number,
+.site-header .header-cart .cart .cart-count {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 0.6666666666666666em;
+  text-align: center;
+  line-height: 1.5em;
+}
+.site-header.style-two .site-branding {
+  padding-left: 0px;
+  display: flex;
+  padding-right: 38px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.site-header .header-search .header-search-wrap .header-search-inner .close {
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  min-height: unset;
+  background: none;
+}
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .close::before,
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .close::after {
+  content: "";
+  background: var(--white-color);
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.35s ease;
+}
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .close::before {
+  transform: rotate(45deg);
+}
+.site-header
+  .header-search
+  .header-search-wrap
+  .header-search-inner
+  .close::after {
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 1025px) {
+  .main-navigation .submenu-toggle {
+    display: none;
+  }
+
+  .main-navigation .nav-menu > li.menu-item-has-children.hover > a::after,
+  .main-navigation .nav-menu > li.menu-item-has-children:hover > a::after {
+    background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-caret-down fa-w-10' aria-hidden='true' data-prefix='fas' data-icon='caret-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' data-fa-i2svg=''%3E%3Cpath fill='%235e7e6e' d='M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .main-navigation .nav-menu li .sub-menu li.menu-item-has-children > a {
+    position: relative;
+  }
+
+  .main-navigation .nav-menu li .sub-menu li.menu-item-has-children > a::after {
+    top: 20px;
+  }
+  .main-navigation
+    .nav-menu
+    li
+    .sub-menu
+    li.menu-item-has-children.hover
+    > a::after,
+  .main-navigation
+    .nav-menu
+    li
+    .sub-menu
+    li.menu-item-has-children:hover
+    > a::after {
+    background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-caret-down fa-w-10' aria-hidden='true' data-prefix='fas' data-icon='caret-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' data-fa-i2svg=''%3E%3Cpath fill='%235e7e6e' d='M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .site-header.style-two
+    .header-main
+    .main-navigation
+    > div
+    .nav-menu
+    > li:last-child
+    .sub-menu,
+  .site-header.style-two
+    .header-main
+    .main-navigation
+    > div
+    .nav-menu
+    > li:nth-last-child(2)
+    .sub-menu {
+    left: 0;
+    right: auto;
+  }
+  .site-header.style-two
+    .header-main
+    .main-navigation
+    > div
+    .nav-menu
+    > li:last-child
+    .sub-menu
+    li
+    a::after,
+  .site-header.style-two
+    .header-main
+    .main-navigation
+    > div
+    .nav-menu
+    > li:nth-last-child(2)
+    .sub-menu
+    li
+    a::after {
+    transform: rotate(-90deg);
+  }
+  .site-header.style-two
+    .main-navigation
+    > div
+    .nav-menu
+    > li:last-child
+    .sub-menu
+    .sub-menu,
+  .site-header:not(.style-six > .header-main)
+    .main-navigation
+    > div
+    .nav-menu
+    > li:nth-last-child(2)
+    .sub-menu
+    .sub-menu {
+    left: 100%;
+    right: auto;
+  }
+}
+
+/*============================
+BANNER LAYOUT TWO
+============================*/
+.site-banner.style-two .item {
+  position: static;
+  width: 100%;
+}
+.site-banner.style-two .wp-custom-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+.site-banner.style-two .wp-custom-header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.site-banner.style-two .container {
+  display: flex;
+  justify-content: flex-end;
+}
+.site-banner.style-two .banner-caption {
+  max-width: 580px;
+  padding: 50px 60px;
+  background: var(--white-color);
+  position: relative;
+  z-index: 1;
+}
+.site-banner.style-two .banner-caption .subtitle {
+  margin-bottom: 10px;
+}
+.site-banner.style-two .banner-caption .title {
+  margin-top: 0;
+}
+.site-banner.style-two .banner-caption .button-wrap {
+  margin-top: 30px;
+}
+.site-banner.style-two .item.left .container {
+  flex-direction: row-reverse;
+  grid-gap: 65px;
+}
+@media only screen and (max-width: 768px) {
+  .site-banner.style-two {
+    padding: 60px 0;
+  }
+  .site-banner.style-three .wp-custom-header,
+  .site-banner.style-two .wp-custom-header {
+    position: unset;
+  }
+  .site-banner.style-two .container {
+    padding: 0;
+    max-width: unset;
+  }
+  .site-banner.style-two .banner-caption {
+    width: 100%;
+    max-width: unset;
+  }
+}
